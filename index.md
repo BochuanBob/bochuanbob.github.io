@@ -55,7 +55,7 @@ A complete list of publications can be found on my [Google scholar](https://scho
 
 # Other Projects
 
-- [Verifying binarized neural networks: Convex relaxations, mixed-integer programming, and consistency](https://github.com/BochuanBob/bnnMIP) <br>
+- [Verifying binarized neural networks via mixed-integer programming](https://github.com/BochuanBob/bnnMIP) <br>
   under the supervision of Joey Huchette <br>
   
 - [ANOVA.boot: Residual and wild bootstrap in 1-way and 2-way ANOVA](https://www.rdocumentation.org/packages/lmboot/versions/0.0.1/topics/ANOVA.boot) <br>
