@@ -48,16 +48,17 @@ A complete list of publications can be found on my [Google scholar](https://scho
 # Theses and Dissertations
 
 - Biclique Partitions, Biclique Covers, and Disjunctive Constraints <br>
-  Ph.D. Dissertation (2023). <br>
+  Ph.D. Dissertation (2023) <br>
 
 - [Modeling Disjunctive Constraints via Junction Trees](https://scholarship.rice.edu/handle/1911/111896) <br>
-  Master Thesis (2021). <br>
+  Master Thesis (2021) <br>
 
 # Other Projects
 
-- Verifying binarized neural networks via mixed-integer programming <br>
+- [Verifying binarized neural networks: Convex relaxations, mixed-integer programming, and consistency](./BNN_MIP.pdf) <br>
   under the supervision of Joey Huchette <br>
   [[code]](https://github.com/BochuanBob/bnnMIP) <br>
+  Note that similar [work](https://optimization-online.org/2021/05/8419/) was studied independently around the same time. <br>
   
 - [ANOVA.boot: Residual and wild bootstrap in 1-way and 2-way ANOVA](https://www.rdocumentation.org/packages/lmboot/versions/0.0.1/topics/ANOVA.boot) <br>
   under the supervision of Megan Heyman <br>
