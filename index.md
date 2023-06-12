@@ -8,7 +8,7 @@ I am primarily interested in mathematical optimization with a concentration on m
 
 # Industry Experience
 
-- **Full-Time** SAS Institute, Houston, TX (remote), June 2023 - Now
+- **Full-Time** SAS Institute, Houston, TX (remote), soon
 
 - **Internship** SAS Institute, Houston, TX (remote), May 2022 - August 2022
 
@@ -55,8 +55,9 @@ A complete list of publications can be found on my [Google scholar](https://scho
 
 # Other Projects
 
-- [Verifying binarized neural networks via mixed-integer programming](https://github.com/BochuanBob/bnnMIP) <br>
+- Verifying binarized neural networks via mixed-integer programming <br>
   under the supervision of Joey Huchette <br>
+  [[code]](https://github.com/BochuanBob/bnnMIP) <br>
   
 - [ANOVA.boot: Residual and wild bootstrap in 1-way and 2-way ANOVA](https://www.rdocumentation.org/packages/lmboot/versions/0.0.1/topics/ANOVA.boot) <br>
   under the supervision of Megan Heyman <br>
