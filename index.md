@@ -18,7 +18,7 @@ I am primarily interested in mathematical optimization with a concentration on m
 
 # Papers
 
-A complete list of publications can be found on my [Google scholar](https://scholar.google.com/citations?user=TZQALw0AAAAJ&hl=en) page.
+A complete list of publications can be found on my [Google scholar](https://scholar.google.com/citations?user=rYRr9pcAAAAJ) page.
 
 - [Building formulations for piecewise linear relaxations of nonlinear functions](https://arxiv.org/abs/2304.14542) <br>
   Bochuan Lyu, Illya V. Hicks, Joey Huchette <br>
