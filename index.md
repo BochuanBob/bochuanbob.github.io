@@ -2,19 +2,28 @@
 layout: default
 ---
 
-I am currently an operations research specialist at SAS Institute working on optimization solvers, such as LP/MILP solvers. I received my M.A. and Ph.D. degrees from the Department of [Computational Applied Mathematics and Operations Research](https://cmor.rice.edu/) at [Rice University](https://www.rice.edu/) in 2022 and 2023 respectively, working with [Joey Huchette](https://www.joehuchette.com/) at Google Research and [Illya V. Hicks](https://profiles.rice.edu/faculty/illya-v-hicks). Before Rice, I obtained my Bachelor of Science in Mathematics from [Rose-Hulman Institute of Technology](https://www.rose-hulman.edu/) in 2019, working with [Megan Heyman](https://www.rose-hulman.edu/academics/faculty/heyman-megan-heyman.html) and [Allen Holder](https://www.rose-hulman.edu/academics/faculty/holder-allen-holder.html).
+I am an Optimization Engineer at Uber, where I develop scalable optimization algorithms for real-time pricing and enhance structural demand models. Previously, I worked on LP and MILP solvers at SAS Institute, developing high-performance heuristics, presolve techniques, and open-source solver interfaces.
 
-I am primarily interested in mathematical optimization with a concentration on mixed-integer programming and combinatorial optimization. My Ph.D. study is focused on modeling disjunctive constraints under the independent branching scheme.
+My interests span mathematical optimization, decomposition algorithms, mixed-integer programming, and combinatorial optimization. I received my M.A. and Ph.D. in Computational and Applied Mathematics from [Rice University](https://www.rice.edu/), where I worked with [Joey Huchette](https://www.joehuchette.com/) and [Illya V. Hicks](https://profiles.rice.edu/faculty/illya-v-hicks). Before Rice, I earned a B.S. in Mathematics from [Rose-Hulman Institute of Technology](https://www.rose-hulman.edu/).
+
+<h1 id="blogs">Blogs</h1>
+
+- [A Graph-Native CUDA Solver for MoE Load Balancing](./lplb-edge-balance/) <br>
+  Replacing dense interior-point iterations with capacity-constrained edge balancing in DeepSeek LPLB. <br>
+
+I plan to share more posts about mathematical optimization, high-performance solvers, and optimization applications in machine learning.
 
 # Industry Experience
 
-- **Full-Time** SAS Institute, Houston, TX (remote), June 2023 - Present
+- **Optimization Engineer** Uber, San Francisco, CA, January 2026 - Present
 
-- **Internship** SAS Institute, Houston, TX (remote), May 2022 - August 2022
+- **Operations Research Specialist** SAS Institute, Houston, TX (remote), June 2023 - January 2026
 
-- **Internship** Alibaba Group, Houston, TX (remote), June 2021 - August 2021
+- **Scientific Computing Intern** SAS Institute, Houston, TX (remote), May 2022 - August 2022
 
-- **Co-op** Rockwell Collins (Collins Aerospace), Cedar Rapids, IA, September 2016 - March 2017
+- **Research Intern** Alibaba Group, Houston, TX (remote), June 2021 - August 2021
+
+- **Systems Engineering Co-op** Collins Aerospace (Rockwell Collins), Cedar Rapids, IA, September 2016 - March 2017
 
 # Papers
 
@@ -74,4 +83,3 @@ A complete list of publications can be found on my [Google scholar](https://scho
 - "Modeling Combinatorial Disjunctive Constraints via Junction Trees", 2022 INFORMS Annual Meeting, October 16-19, 2022, Indianapolis, IN.
 
 - "Modeling Disjunctive Constraints via Junction Trees", 2022 INFORMS Optimization Society Conference, March 13-15, 2022, Greenville, SC.
-

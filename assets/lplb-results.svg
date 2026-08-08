@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 610" role="img" aria-labelledby="title desc">
+  <title id="title">Latency comparison between current LPLB and edge balance</title>
+  <desc id="desc">Horizontal bars compare microsecond latency for five graph shapes. Edge balance ranges from 13.53 to 19.24 microseconds and becomes increasingly faster than current LPLB as graph size grows, reaching 5.41 times speedup at 16 by 2.</desc>
+  <defs>
+    <style>
+      .title{font:700 23px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#0f172a}
+      .label{font:600 16px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#1e293b}
+      .body{font:14px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#475569}
+      .tick{font:12px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#64748b}
+      .value{font:600 13px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#334155}
+      .metric{font:700 25px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#0f766e}
+    </style>
+  </defs>
+  <rect width="960" height="610" rx="20" fill="#f8fafc"/>
+  <text x="48" y="52" class="title">Graph-native work stays nearly flat as the problem grows</text>
+  <text x="48" y="78" class="body">CUDA latency on RTX 4060 · lower is better · identical 960-instance corpus</text>
+
+  <rect x="48" y="105" width="258" height="82" rx="13" fill="#ecfdf5" stroke="#99f6e4"/>
+  <text x="68" y="135" class="metric">1.26–5.41×</text><text x="68" y="162" class="body">measured speedup</text>
+  <rect x="326" y="105" width="258" height="82" rx="13" fill="#ecfdf5" stroke="#99f6e4"/>
+  <text x="346" y="135" class="metric">0.00164%</text><text x="346" y="162" class="body">maximum gap vs. HiGHS</text>
+  <rect x="604" y="105" width="308" height="82" rx="13" fill="#ecfdf5" stroke="#99f6e4"/>
+  <text x="624" y="135" class="metric">960 / 960</text><text x="624" y="162" class="body">passed feasibility checks</text>
+
+  <rect x="630" y="211" width="14" height="14" rx="3" fill="#94a3b8"/><text x="652" y="223" class="body">Current LPLB</text>
+  <rect x="768" y="211" width="14" height="14" rx="3" fill="#0d9488"/><text x="790" y="223" class="body">Edge balance</text>
+
+  <g stroke="#e2e8f0" stroke-width="1">
+    <path d="M150 250V540"/><path d="M290 250V540"/><path d="M430 250V540"/><path d="M570 250V540"/><path d="M710 250V540"/><path d="M850 250V540"/>
+  </g>
+  <g class="tick" text-anchor="middle">
+    <text x="150" y="562">0</text><text x="290" y="562">20</text><text x="430" y="562">40</text><text x="570" y="562">60</text><text x="710" y="562">80</text><text x="850" y="562">100 µs</text>
+  </g>
+
+  <g class="label" text-anchor="end">
+    <text x="130" y="279">4×1</text><text x="130" y="337">4×2</text><text x="130" y="395">8×1</text><text x="130" y="453">8×2</text><text x="130" y="511">16×2</text>
+  </g>
+  <g fill="#94a3b8">
+    <rect x="150" y="260" width="127.5" height="14" rx="5"/><rect x="150" y="318" width="156.5" height="14" rx="5"/><rect x="150" y="376" width="179.1" height="14" rx="5"/><rect x="150" y="434" width="277.1" height="14" rx="5"/><rect x="150" y="492" width="728.4" height="14" rx="5"/>
+  </g>
+  <g fill="#0d9488">
+    <rect x="150" y="278" width="101.0" height="14" rx="5"/><rect x="150" y="336" width="95.9" height="14" rx="5"/><rect x="150" y="394" width="94.7" height="14" rx="5"/><rect x="150" y="452" width="105.9" height="14" rx="5"/><rect x="150" y="510" width="134.7" height="14" rx="5"/>
+  </g>
+  <g class="value">
+    <text x="286" y="272">18.21</text><text x="259" y="290">14.43 · 1.26×</text>
+    <text x="315" y="330">22.36</text><text x="254" y="348">13.70 · 1.63×</text>
+    <text x="338" y="388">25.59</text><text x="253" y="406">13.53 · 1.89×</text>
+    <text x="436" y="446">39.58</text><text x="264" y="464">15.13 · 2.62×</text>
+    <text x="886" y="504" text-anchor="end">104.05</text><text x="293" y="522">19.24 · 5.41×</text>
+  </g>
+  <text x="150" y="591" class="tick">Shape = ranks × replica slots</text>
+</svg>
