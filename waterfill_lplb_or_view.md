@@ -1,8 +1,8 @@
 ---
 layout: blog
-title: "Waterfill and LPLB: An Operations-Research View of MoE Load Balancing"
+title: "Waterfill and LPLB: An Operations Research View of MoE Load Balancing"
 date: 2026-08-09
-description: "An operations-research view of Waterfill and LPLB for load balancing in mixture-of-experts systems"
+description: "An operations research view of Waterfill and LPLB for load balancing in mixture-of-experts systems"
 permalink: /waterfill-lplb-or-view/
 ---
 
@@ -16,11 +16,11 @@ window.MathJax = {
 </script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-# Waterfill and LPLB: An Operations-Research View of MoE Load Balancing
+# Waterfill and LPLB: An Operations Research View of MoE Load Balancing
 
 *Bochuan Lyu and Zedong Peng — August 2026*
 
-Mixture-of-Experts (MoE) inference is a load-balancing problem in disguise. Tokens create jobs, GPU ranks are machines, and the latency of an MoE layer is determined largely by the busiest rank. From an operations-research (OR) viewpoint, the natural objective is therefore **min–max load balancing**: minimize the maximum workload assigned to any rank.
+Mixture-of-Experts (MoE) inference is a load-balancing problem in disguise. Tokens create jobs, GPU ranks are machines, and the latency of an MoE layer is determined largely by the busiest rank. From an operations research (OR) viewpoint, the natural objective is therefore **min–max load balancing**: minimize the maximum workload assigned to any rank.
 
 [Waterfill and LPLB](https://www.lmsys.org/blog/2026-06-26-waterfill-lplb) address two different sources of imbalance in SGLang. Waterfill assigns the dense shared-expert computation to relatively light ranks. LPLB distributes the tokens of replicated routed experts among their physical copies. Both change only the physical execution location, not the logical experts selected by the model.
 

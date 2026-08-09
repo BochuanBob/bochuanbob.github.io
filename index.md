@@ -14,8 +14,8 @@ My interests span mathematical optimization, decomposition algorithms, mixed-int
 - [A Graph-Native CUDA Solver for MoE Load Balancing](./lplb-edge-balance/) <br>
   Replacing dense interior-point iterations with capacity-constrained edge balancing in DeepSeek LPLB. <br>
 
-- [Waterfill and LPLB: An Operations-Research View of MoE Load Balancing](./waterfill-lplb-or-view/) <br>
-  An operations-research view of load balancing for mixture-of-experts systems. <br>
+- [Waterfill and LPLB: An Operations Research View of MoE Load Balancing](./waterfill-lplb-or-view/) <br>
+  An operations research view of load balancing for mixture-of-experts systems. <br>
 
 I write about mathematical optimization, high-performance solvers, and their applications in AI infrastructure and machine learning systems.
 
