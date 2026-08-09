@@ -8,6 +8,9 @@ My interests span mathematical optimization, decomposition algorithms, mixed-int
 
 <h1 id="blogs">Blogs</h1>
 
+- [vLLM and SGLang on an RTX 4060: A Reproducible Serving Pilot](./rtx4060-vllm-sglang-serving/) <br>
+  Identical request traces reveal how concurrency, prefill, and decode shape single-GPU LLM serving performance. <br>
+
 - [A Graph-Native CUDA Solver for MoE Load Balancing](./lplb-edge-balance/) <br>
   Replacing dense interior-point iterations with capacity-constrained edge balancing in DeepSeek LPLB. <br>
 

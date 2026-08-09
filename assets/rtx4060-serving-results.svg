@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 620" role="img" aria-labelledby="title desc">
+  <title id="title">vLLM and SGLang results at concurrency eight</title>
+  <desc id="desc">Two horizontal bar charts compare output-token throughput and median time to first token for short chat, decode-heavy, balanced, and prefill-heavy workloads. Neither serving framework leads on every workload.</desc>
+  <defs>
+    <style>
+      .title{font:700 24px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#0f172a}.subtitle{font:14px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#64748b}.heading{font:700 17px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#1e293b}.label{font:600 14px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#334155}.tick{font:12px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#64748b}.value{font:600 12px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#334155}.grid{stroke:#e2e8f0;stroke-width:1}.vllm{fill:#3b82f6}.sglang{fill:#0d9488}
+    </style>
+  </defs>
+  <rect width="1100" height="620" rx="20" fill="#f8fafc"/>
+  <text x="42" y="48" class="title">Concurrency 8: the winner depends on workload shape</text>
+  <text x="42" y="74" class="subtitle">RTX 4060 · Qwen2.5-1.5B-Instruct · identical request traces · one repetition</text>
+  <rect x="716" y="34" width="14" height="14" rx="3" class="vllm"/><text x="738" y="46" class="subtitle">vLLM</text>
+  <rect x="806" y="34" width="14" height="14" rx="3" class="sglang"/><text x="828" y="46" class="subtitle">SGLang</text>
+
+  <rect x="28" y="104" width="522" height="474" rx="15" fill="#fff" stroke="#dce3ea"/>
+  <text x="52" y="137" class="heading">Output throughput</text><text x="52" y="159" class="subtitle">tokens per second · higher is better</text>
+  <g class="grid"><path d="M170 190V526"/><path d="M276 190V526"/><path d="M382 190V526"/><path d="M488 190V526"/></g>
+  <g class="tick" text-anchor="middle"><text x="170" y="550">0</text><text x="276" y="550">200</text><text x="382" y="550">400</text><text x="488" y="550">600</text></g>
+  <g class="label" text-anchor="end"><text x="152" y="229">Short chat</text><text x="152" y="309">Decode-heavy</text><text x="152" y="389">Balanced</text><text x="152" y="469">Prefill-heavy</text></g>
+  <g class="vllm"><rect x="170" y="207" width="280" height="15" rx="5"/><rect x="170" y="287" width="312" height="15" rx="5"/><rect x="170" y="367" width="265" height="15" rx="5"/><rect x="170" y="447" width="196" height="15" rx="5"/></g>
+  <g class="sglang"><rect x="170" y="229" width="290" height="15" rx="5"/><rect x="170" y="309" width="289" height="15" rx="5"/><rect x="170" y="389" width="267" height="15" rx="5"/><rect x="170" y="469" width="181" height="15" rx="5"/></g>
+  <g class="value"><text x="456" y="219">528.6</text><text x="466" y="241">547.4</text><text x="488" y="299">589.2</text><text x="465" y="321">546.2</text><text x="441" y="379">499.2</text><text x="443" y="401">504.4</text><text x="372" y="459">370.3</text><text x="357" y="481">341.1</text></g>
+
+  <rect x="570" y="104" width="502" height="474" rx="15" fill="#fff" stroke="#dce3ea"/>
+  <text x="594" y="137" class="heading">Median time to first token</text><text x="594" y="159" class="subtitle">milliseconds · lower is better</text>
+  <g class="grid"><path d="M712 190V526"/><path d="M820 190V526"/><path d="M928 190V526"/><path d="M1036 190V526"/></g>
+  <g class="tick" text-anchor="middle"><text x="712" y="550">0</text><text x="820" y="550">40</text><text x="928" y="550">80</text><text x="1036" y="550">120</text></g>
+  <g class="label" text-anchor="end"><text x="694" y="229">Short chat</text><text x="694" y="309">Decode-heavy</text><text x="694" y="389">Balanced</text><text x="694" y="469">Prefill-heavy</text></g>
+  <g class="vllm"><rect x="712" y="207" width="126" height="15" rx="5"/><rect x="712" y="287" width="122" height="15" rx="5"/><rect x="712" y="367" width="137" height="15" rx="5"/><rect x="712" y="447" width="232" height="15" rx="5"/></g>
+  <g class="sglang"><rect x="712" y="229" width="124" height="15" rx="5"/><rect x="712" y="309" width="114" height="15" rx="5"/><rect x="712" y="389" width="123" height="15" rx="5"/><rect x="712" y="469" width="302" height="15" rx="5"/></g>
+  <g class="value"><text x="844" y="219">46.7</text><text x="842" y="241">45.8</text><text x="840" y="299">45.1</text><text x="832" y="321">42.3</text><text x="855" y="379">50.6</text><text x="841" y="401">45.7</text><text x="950" y="459">86.0</text><text x="1020" y="481">111.9</text></g>
+  <text x="42" y="603" class="subtitle">Small gaps should be treated as directional: this pilot used eight requests per point and one repetition.</text>
+</svg>
