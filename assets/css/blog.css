@@ -164,6 +164,9 @@ a:hover { color: var(--accent-dark); }
   color: #334155;
 }
 
+.research-status { border-left-color: #2563eb; background: #eff6ff; }
+.research-status strong { color: #1d4ed8; }
+
 .article .config-table td { text-align: left; }
 .article .workload-table td:last-child { text-align: left; }
 .article .benchmark-table { min-width: 790px; }

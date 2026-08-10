@@ -24,6 +24,8 @@ The new method repeatedly balances the workloads at the endpoints of each replic
 
 This page describes the optimization model, the algorithmic argument, the CUDA implementation, and the current experimental results.
 
+<aside class="article-note research-status"><strong>Research status.</strong> The edge-balance implementation and this technical article were developed by Bochuan Lyu. Bochuan Lyu and Zedong Peng are extending this work through end-to-end evaluations in inference systems. The broader algorithmic analysis and experimental results are intended for a future research paper.</aside>
+
 ## The load-balancing LP
 
 Consider one LPLB group with GPU ranks $V$ and replica edges $E$. An edge $e=(u,v)$ means that workload associated with an expert on rank $u$ may instead be processed by its replica on rank $v$.
@@ -436,6 +438,14 @@ The most useful extensions are:
 - validate on datacenter GPUs and end-to-end MoE workloads.
 
 The broader lesson is that an LP solver for an online inference or training path should exploit the model's combinatorial structure. For this sparse load-redistribution problem, a graph-native coordinate method provides feasible iterates, simple parallelism, and much lower latency on the tested hardware.
+
+## Code and citation
+
+If you build on the current implementation, please reference the upstream LPLB project, the Edge Balance implementation branch, and this technical article:
+
+- Upstream project: [deepseek-ai/LPLB](https://github.com/deepseek-ai/LPLB)
+- Edge Balance implementation: [BochuanBob/LPLB — `feature/edge-balance-solver`](https://github.com/BochuanBob/LPLB/tree/feature/edge-balance-solver)
+- Technical article: [A Graph-Native CUDA Solver for MoE Load Balancing](https://bochuanbob.github.io/lplb-edge-balance/)
 
 ---
 

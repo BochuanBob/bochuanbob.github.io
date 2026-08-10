@@ -17,13 +17,15 @@ window.MathJax = {
 </script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-We are working on a paper about fast optimization algorithms for dynamic load balancing in mixture-of-experts systems. This experiment studies a generalized form of LPLB in which one expert may be available on more than two GPU ranks. The eligible ranks of an expert form a hyperedge, and the optimizer distributes that expert's demand across all ranks in the hyperedge.
+This experiment studies a generalized form of LPLB in which one expert may be available on more than two GPU ranks. The eligible ranks of an expert form a hyperedge, and the optimizer distributes that expert's demand across all ranks in the hyperedge.
 
 <div class="result-strip" aria-label="Experiment summary">
-  <div class="result-card"><strong>1,536 / 1,536</strong><span>feasible CUDA solutions</span></div>
+  <div class="result-card"><strong>384 / 384</strong><span>feasible at tolerance 10<sup>−4</sup></span></div>
   <div class="result-card"><strong>57.55 µs</strong><span>median at tolerance 10<sup>−4</sup></span></div>
   <div class="result-card"><strong>0.0188%</strong><span>maximum gap at tolerance 10<sup>−4</sup></span></div>
 </div>
+
+<aside class="article-note research-status"><strong>Research status.</strong> This implementation is part of ongoing research by Bochuan Lyu and Zedong Peng on GPU-native optimization algorithms for MoE load balancing. The current experiments are development results; the broader algorithmic analysis and end-to-end evaluation are intended for a future research paper.</aside>
 
 ## Formulation
 
@@ -142,7 +144,7 @@ We evaluated flow-change tolerances from $10^{-2}$ through $10^{-5}$. Each row s
   </table>
 </div>
 
-All 1,536 CUDA solutions were feasible and converged, and HiGHS solved every verification LP. Tightening the tolerance increases the number of sweeps and median latency while steadily reducing the objective gap. We use $10^{-4}$ as the current balanced setting: its median latency is 57.55 microseconds, its mean objective gap is 0.00077%, and its maximum observed gap is 0.0188%.
+All 384 instances were feasible and converged at every tolerance. Across the four tolerance settings, this corresponds to 1,536 feasible CUDA solves; HiGHS also solved every verification LP. Tightening the tolerance increases the number of sweeps and median latency while steadily reducing the objective gap. We use $10^{-4}$ as the current balanced setting: its median latency is 57.55 microseconds, its mean objective gap is 0.00077%, and its maximum observed gap is 0.0188%.
 
 ## Results at the selected tolerance
 
@@ -163,3 +165,11 @@ The following table breaks down the $10^{-4}$ results by problem shape.
 </div>
 
 The results show that hyperedge water-filling preserves feasibility by construction and produces objectives close to the HiGHS optimum. Larger hyperedges generally need fewer sweeps, but each update performs more work and dense hypergraphs expose fewer nonconflicting hyperedges per color. The tolerance therefore provides a direct and useful latency-quality control for the CUDA solver.
+
+## Code and citation
+
+If you build on the current implementation, please reference the upstream LPLB project, the Generalized LPLB implementation branch, and this technical article:
+
+- Upstream project: [deepseek-ai/LPLB](https://github.com/deepseek-ai/LPLB)
+- Generalized LPLB implementation: [BochuanBob/LPLB — `feature/generalized-lplb`](https://github.com/BochuanBob/LPLB/tree/feature/generalized-lplb)
+- Technical article: [Generalized LPLB with Hyperedge Water-Filling on CUDA](https://bochuanbob.github.io/generalized-lplb-hyperedge-waterfill/)
