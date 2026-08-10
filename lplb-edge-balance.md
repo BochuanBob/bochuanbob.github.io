@@ -1,6 +1,9 @@
 ---
 layout: blog
 title: "A Graph-Native CUDA Solver for MoE Load Balancing"
+author: "Bochuan Lyu"
+date: 2026-08-08
+last_updated: 2026-08-09
 description: "Replacing dense interior-point iterations with capacity-constrained edge balancing in DeepSeek LPLB"
 permalink: /lplb-edge-balance/
 ---
@@ -14,10 +17,6 @@ window.MathJax = {
 };
 </script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
-# A Graph-Native CUDA Solver for MoE Load Balancing
-
-*Bochuan Lyu — August 2026*
 
 [DeepSeek LPLB](https://github.com/deepseek-ai/LPLB) formulates dynamic expert-parallel load balancing in mixture-of-experts models as a small linear program. Its current experimental solver applies five interior-point iterations using dense linear algebra on one streaming multiprocessor. I implemented an alternative CUDA solver that works directly on the sparse replica graph.
 

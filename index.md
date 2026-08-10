@@ -8,14 +8,17 @@ My interests span mathematical optimization, decomposition algorithms, mixed-int
 
 <h1 id="blogs">Blogs</h1>
 
-- [vLLM and SGLang on an RTX 4060: A Reproducible Serving Pilot](./rtx4060-vllm-sglang-serving/) <br>
-  Identical request traces reveal how concurrency, prefill, and decode shape single-GPU LLM serving performance. <br>
+- [Generalized LPLB with Hyperedge Water-Filling on CUDA](./generalized-lplb-hyperedge-waterfill/) <br>
+  *August 9, 2026* — A CUDA load-balancing algorithm for experts replicated across multiple ranks. <br>
 
-- [A Graph-Native CUDA Solver for MoE Load Balancing](./lplb-edge-balance/) <br>
-  Replacing dense interior-point iterations with capacity-constrained edge balancing in DeepSeek LPLB. <br>
+- [vLLM and SGLang on an RTX 4060: A Reproducible Serving Pilot](./rtx4060-vllm-sglang-serving/) <br>
+  *August 9, 2026* — Identical request traces reveal how concurrency, prefill, and decode shape single-GPU LLM serving performance. <br>
 
 - [Waterfill and LPLB: An Operations Research View of MoE Load Balancing](./waterfill-lplb-or-view/) <br>
-  An operations research view of load balancing for mixture-of-experts systems. <br>
+  *August 9, 2026* — An operations research view of load balancing for mixture-of-experts systems. <br>
+
+- [A Graph-Native CUDA Solver for MoE Load Balancing](./lplb-edge-balance/) <br>
+  *August 8, 2026* — Replacing dense interior-point iterations with capacity-constrained edge balancing in DeepSeek LPLB. <br>
 
 I write about mathematical optimization, high-performance solvers, and their applications in AI infrastructure and machine learning systems.
 

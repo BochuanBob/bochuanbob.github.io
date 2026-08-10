@@ -1,16 +1,15 @@
 ---
 layout: blog
 title: "vLLM and SGLang on an RTX 4060: A Reproducible Serving Pilot"
+author: "Bochuan Lyu"
 date: 2026-08-09
 description: "Identical request traces reveal how concurrency, prefill, and decode shape single-GPU LLM serving performance"
 permalink: /rtx4060-vllm-sglang-serving/
 ---
 
-# vLLM and SGLang on an RTX 4060: A Reproducible Serving Pilot
-
-*Bochuan Lyu — August 2026*
-
 How well can modern LLM serving systems use a consumer GPU? I built a small reproducible benchmark to compare [vLLM](https://github.com/vllm-project/vllm) and [SGLang](https://github.com/sgl-project/sglang) on a laptop-class NVIDIA RTX 4060 under WSL2.
+
+**Code and benchmark artifacts:** [BochuanBob/consumer-llm-serving-lab](https://github.com/BochuanBob/consumer-llm-serving-lab)
 
 This experiment is a pilot, not a definitive leaderboard. Its purpose is to validate a fair test harness, establish useful workload shapes, and identify the measurements that matter before running a larger study. Both backends received the same prompts and output limits in every matching test. Across 32 benchmark points, all 256 requests completed successfully.
 
