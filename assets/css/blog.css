@@ -177,6 +177,10 @@ a:hover { color: var(--accent-dark); }
 .compact-table-wrap { max-width: 680px; }
 .article .tolerance-table { min-width: 900px; }
 .article .shape-table { min-width: 960px; }
+.article .stage-table { min-width: 820px; }
+.article .system-table { min-width: 1040px; }
+.article .stage-table td,
+.article .system-table td { text-align: left; white-space: normal; }
 .article .data-table .selected-row { background: #ecfdf5; }
 
 .table-badge {

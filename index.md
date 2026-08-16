@@ -8,6 +8,9 @@ My interests span mathematical optimization, decomposition algorithms, mixed-int
 
 <h1 id="blogs">Blogs</h1>
 
+- [Expert Placement as Optimization: An OR View of DeepSeek EPLB](./eplb-or-view/) <br>
+  *August 16, 2026* — An operations research interpretation of expert replication and placement in DeepSeek EPLB, SGLang, and vLLM. <br>
+
 - [Generalized LPLB with Hyperedge Water-Filling on CUDA](./generalized-lplb-hyperedge-waterfill/) <br>
   *August 9, 2026* — A CUDA load-balancing algorithm for experts replicated across multiple ranks. <br>
 
