@@ -196,6 +196,8 @@ a:hover { color: var(--accent-dark); }
   text-transform: uppercase;
 }
 
+.muted-badge { background: #64748b; }
+
 .article table { width: 100%; border: 0; }
 .article thead th { border-bottom: 2px solid #cbd5e1; color: #334155; font-size: .88rem; }
 .article tbody td, .article tbody th { border-bottom: 1px solid #e2e8f0; }

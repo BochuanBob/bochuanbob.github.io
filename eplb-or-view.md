@@ -3,6 +3,7 @@ layout: blog
 title: "Expert Placement as Optimization: An OR View of DeepSeek EPLB"
 author: "Bochuan Lyu"
 date: 2026-08-16
+last_updated: 2026-08-17
 description: "An operations research interpretation of expert replication and placement in DeepSeek EPLB, SGLang, and vLLM"
 permalink: /eplb-or-view/
 ---
@@ -27,7 +28,7 @@ This article studies the algorithm that DeepSeek released and the current implem
 
 <figure>
   <img src="/assets/eplb-three-stage.svg" alt="Diagram of the three-stage DeepSeek EPLB pipeline: pack expert groups onto nodes, allocate replicas, pack physical copies onto GPUs, then install the placement plan in the serving runtime.">
-  <figcaption>EPLB separates topology, replication, and GPU scheduling. The resulting maps are consumed by the serving runtime, where expert weights are moved and tokens are routed.</figcaption>
+  <figcaption>Hierarchical EPLB performs all three stages. Global EPLB bypasses group-to-node packing and applies replication and GPU packing across the full deployment. Both produce maps consumed by the serving runtime.</figcaption>
 </figure>
 
 ## The planning problem
@@ -36,9 +37,10 @@ Consider one MoE layer. Let:
 
 - $\mathcal E$ be the logical experts;
 - $\mathcal G$ be the GPUs;
+- $G:=\lvert\mathcal G\rvert$ be the number of GPUs;
 - $\lambda_e$ be the measured load of expert $e$;
 - $P$ be the number of physical expert slots;
-- $C=P/|\mathcal G|$ be the number of slots on each GPU, assuming $P$ is divisible by $|\mathcal G|$.
+- $C=P/G$ be the number of slots on each GPU, assuming $P$ is divisible by $G$.
 
 Let $r_e\ge 1$ be the number of physical replicas of expert $e$, and let $x_{eg}$ be the number of those replicas placed on GPU $g$. Under EPLB's load model, the traffic of an expert is divided equally among its replicas. One copy of expert $e$ therefore contributes $\lambda_e/r_e$ load to its GPU.
 
@@ -68,9 +70,9 @@ The objective minimizes the maximum estimated GPU load. The formulation couples 
 
 The term $x_{eg}\lambda_e/r_e$ makes the integrated model nonlinear. Even after fixing $r$, placement is a cardinality-constrained makespan scheduling problem. A serving system also needs an answer quickly, so the released implementation uses a structured greedy decomposition rather than solving the integrated model exactly.
 
-## The three layers of DeepSeek EPLB
+## Hierarchical DeepSeek EPLB: three stages
 
-DeepSeek uses hierarchical balancing when expert groups can be divided evenly among nodes. Otherwise, it falls back to global balancing. The hierarchical policy has three stages.
+The implementation exposes hierarchical and global balancing modes. In **hierarchical mode**, it first packs expert groups onto nodes, then chooses replicas independently within each node, and finally packs the resulting physical experts onto that node's GPUs. In **global mode**, it invokes the same routine with one synthetic group and one synthetic node. Group-to-node packing is then a no-op, so the effective sequence begins with global replication and ends with packing across all GPUs.
 
 ### 1. Pack expert groups onto nodes
 
@@ -164,7 +166,7 @@ The three stages solve related but distinct approximations:
   <table class="data-table stage-table">
     <thead><tr><th scope="col">Stage</th><th scope="col">Decision</th><th scope="col">Optimization view</th><th scope="col">Greedy rule</th></tr></thead>
     <tbody>
-      <tr><th scope="row">Node packing</th><td>Group → node</td><td>Capacitated makespan scheduling</td><td>Heaviest group to lightest nonfull node</td></tr>
+      <tr><th scope="row">Node packing <span class="table-badge muted-badge">hierarchical</span></th><td>Group → node</td><td>Capacitated makespan scheduling</td><td>Heaviest group to lightest nonfull node</td></tr>
       <tr><th scope="row">Replication</th><td>Copies per expert</td><td>Discrete minimax resource allocation</td><td>Split the largest $\lambda_e/r_e$</td></tr>
       <tr><th scope="row">GPU packing</th><td>Physical copy → GPU</td><td>Cardinality-constrained makespan scheduling</td><td>Heaviest copy to lightest nonfull GPU</td></tr>
     </tbody>
