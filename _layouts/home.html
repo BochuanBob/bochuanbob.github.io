@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ page.description | default: site.description | strip_html | strip_newlines | escape }}">
+    <title>{{ page.title | default: site.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/home.css' | relative_url }}">
+  </head>
+  <body>
+    <main class="profile-shell">
+      <article class="profile-card">
+        <div class="portrait-wrap">
+          <img class="portrait" src="{{ '/logo.jpg' | relative_url }}" alt="Portrait of Bochuan Lyu">
+        </div>
+
+        <div class="profile-content">
+          <h1>{{ site.title }}</h1>
+
+          <div class="bio">
+            {{ content }}
+          </div>
+
+          <nav class="profile-links" aria-label="Professional profiles">
+            <a href="https://www.linkedin.com/in/bochuan-lyu-270307121/" rel="me">LinkedIn</a>
+            <a href="https://scholar.google.com/citations?user=rYRr9pcAAAAJ" rel="me">Google Scholar</a>
+          </nav>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>
